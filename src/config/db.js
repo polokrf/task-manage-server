@@ -26,12 +26,13 @@ async function connectDB() {
     db = client.db('taskManager');
 
     // Ping database
-    await client.db('admin').command({ ping: 1 });
+    // await client.db('admin').command({ ping: 1 });
 
-    console.log('MongoDB connected successfully!');
+    // console.log('MongoDB connected successfully!');
   } catch (error) {
     console.error('MongoDB connection failed:', error);
-    process.exit(1);
+    // process.exit(1);
+    throw error
   }
 }
 const getDB = () => db;
